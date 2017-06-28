@@ -86,12 +86,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
-    <Content Include="Scripts\jquery.signalR-1.2.2.js" />
-    <Content Include="Scripts\jquery.signalR-1.2.2.min.js" />
+    <Content Include="wwwContent\lib\signalR\jquery.signalR-1.2.2.js" />
+    <Content Include="wwwContent\lib\signalR\jquery.signalR-1.2.2.min.js" />
     <Content Include="Web.config" />
     <Content Include="wwwContent\app\realtimeserver\realtimeserver.js" />
     <Content Include="wwwContent\app\main.js" />
@@ -147,7 +148,11 @@
     <Content Include="wwwContent\License.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="signalr\ChatRoomHub.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">

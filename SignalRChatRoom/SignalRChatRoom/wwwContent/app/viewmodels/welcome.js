@@ -1,4 +1,4 @@
-﻿define(['knockout', '../realtimeserver/realtimeserver', 'durandal/app', 'durandal/system', './username'], function (ko, server, app, system, userNameClass) {
+﻿define(['knockout', '../realtimeserver/realtimeserver', 'durandal/app', 'durandal/system', './username','jquery'], function (ko, server, app, system, userNameClass,$) {
     var config = {};
     config.displayName = "SignalR Chat Room";
     config.welcomeWord = "Welcome to SignalR Chat Room where you can utilize the coolest function of signalR to live chat with other user";
@@ -21,7 +21,7 @@
     };
 
     var sendMsg = function () {
-        server.boardCast({ userName: userName.name, text: myMessage, timestample: (new Date()).toLocaleTimeString() });
+        server.boardCast({ userName: userName.name, text: myMessage(), timestample: (new Date()).toLocaleTimeString() });
     };
 
 

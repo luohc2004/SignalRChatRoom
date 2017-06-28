@@ -6,13 +6,21 @@
         'transitions' : '../lib/durandal/js/transitions',
         'knockout': '../lib/knockout/knockout-3.1.0',
         'bootstrap': '../lib/bootstrap/js/bootstrap',
-        'jquery': '../lib/jquery/jquery-1.9.1'
+        'jquery': '../lib/jquery/jquery-1.9.1',
+        'signalRlib': '../lib/signalr/jquery.signalR-1.2.2',
+        'signalRhub':'/signalr/hubs?'
     },
     shim: {
         'bootstrap': {
             deps: ['jquery'],
             exports: 'jQuery'
-       }
+        },
+        'signalRlib':{
+            deps: ['jquery']
+        },
+        'signalRhub': {
+            deps: ['signalRlib']
+        }
     }
 });
 
@@ -23,7 +31,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],  function (s
 
     app.title = 'SignalR Chat Room';
 
-    app.fake = true;//Use fake data or not
+    app.fake = false;//Use fake data or not
 
     app.configurePlugins({
         router:true,
