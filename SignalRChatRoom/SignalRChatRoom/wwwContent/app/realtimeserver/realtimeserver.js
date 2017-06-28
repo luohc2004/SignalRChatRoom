@@ -1,11 +1,14 @@
 ﻿define(["durandal/app", "jquery", "durandal/system"], function (app, $, system) {
     var fakeBoardCast = function (msg) {
+        system.log("fake cast:" + msg);
         app.trigger('msgReceived', msg);
     };
     var fakeEnterRoomCast = function (userName) {
-        app.trigger('msgReceived', { userName: "system", text: userName + "has entered room", timestamp: (new Date()).toLocaleTimeString() });
+        system.log("fake cast:" + userName+" Enter the Room");
+        app.trigger('msgReceived', { userName: "system", text: userName + "has entered room", timestample: (new Date()).toLocaleTimeString() });
     };
     var fakeCheckUserName = function (userName) {
+        system.log("fake check \""+userName+"\" and return true")
         return true;
     };
     var boardCast = function () {

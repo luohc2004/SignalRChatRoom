@@ -1,8 +1,8 @@
 ﻿<section>
     <h2 data-bind="text:displayName"></h2>
     <blockquote data-bind="text:welcomeWord"></blockquote>
-    <ul data-bind="foreach: messages, as:'msg'">
-        <li><span data-bind="text:msg.userName"></span><span data-bind="text:msg.text"></span><span data-bind="text:msg.timestample"></span></li>
+    <ul data-bind="foreach: messages">
+        <li><span data-bind="text:$data.userName"></span>:<span data-bind="text:$data.text"></span><span data-bind="text:$data.timestample"></span></li>
     </ul>
     <form class="form-group"></form>
     <input type="text" data-bind="value:myMessage" class="form-control col-md-3"/><a class="btn btn-primary" data-bind="click:sendMsg">SEND</a>
