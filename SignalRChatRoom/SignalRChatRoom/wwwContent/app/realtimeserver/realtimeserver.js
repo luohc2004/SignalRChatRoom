@@ -29,11 +29,13 @@
     };
     system.log("chat:" + chat);
     $.connection.hub.start();
-    var boardCast = function () {
-        system.log("unimplement yet");
+    var boardCast = function (msg) {
+        system.log("real boardCast: " + msg)
+        chat.server.boardCast(msg);
     };
-    var enterRoomCast = function () {
-        system.log("unimplement yet");
+    var enterRoomCast = function (userName) {
+        system.log("real enter room " + userName);
+        chat.server.enterRoomCast(userName);
     };
     var checkUserName = function (userName) {
         system.log("check " + userName + "from server");

@@ -153,6 +153,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signalr\ChatRoomHub.cs" />
+    <Compile Include="signalr\Message.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">

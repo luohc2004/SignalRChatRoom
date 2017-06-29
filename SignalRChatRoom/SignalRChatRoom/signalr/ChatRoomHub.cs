@@ -13,5 +13,16 @@ namespace SignalRChatRoom.signalr
         {
             return !users.Contains(name);
         }
+
+        public void EnterRoomCast(string userName)
+        {
+            users.Add(userName);
+            BoardCast(new { userName = "system", text = userName + " has entered our chat room", timestample = DateTime.Now.ToShortTimeString() });
+        }
+
+        public void BoardCast(dynamic msg)
+        {
+            Clients.All.UpdateMessages(msg);
+        }
     }
 }
